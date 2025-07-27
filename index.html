@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shailja Tiwari - Lead Software Test Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            color: #212529;
+            position: relative; /* Needed for z-indexing the background */
+        }
+        #background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Place it behind everything */
+            object-fit: cover;
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .content-section {
+             background: rgba(248, 249, 250, 0.85); /* Semi-transparent background for readability */
+             backdrop-filter: blur(2px);
+             -webkit-backdrop-filter: blur(2px);
+             padding: 2.5rem;
+             border-radius: 0.5rem;
+             margin-bottom: 2.5rem;
+             border: 1px solid rgba(0,0,0,0.05);
+        }
+        .accent-text {
+            color: #0052d4;
+        }
+        .section-title {
+            position: relative;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1a202c;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background-color: #0052d4;
+            border-radius: 2px;
+        }
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .scroll-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.07), 0 0 15px rgba(0, 82, 212, 0.1);
+        }
+
+        /* Background SVG animation styles */
+        .bg-line {
+            stroke-width: 0.5;
+            stroke: rgba(0, 82, 212, 0.2);
+        }
+        .bg-node {
+            fill: rgba(0, 82, 212, 0.4);
+            animation: pulse 4s infinite ease-in-out;
+        }
+        .bg-node-highlight {
+            fill: rgba(0, 82, 212, 0.8);
+            animation: pulse 2s infinite ease-in-out;
+        }
+        @keyframes pulse {
+            0% { r: 2; opacity: 0.7; }
+            50% { r: 3; opacity: 1; }
+            100% { r: 2; opacity: 0.7; }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Animated SVG Background -->
+    <svg id="background-animation" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <pattern id="pattern-circles" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                <circle cx="20" cy="20" r="1" fill="rgba(0, 82, 212, 0.1)"></circle>
+            </pattern>
+        </defs>
+        <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-circles)"></rect>
+        <g id="animated-lines"></g>
+    </svg>
+
+    <div class="content-wrapper">
+        <!-- Header -->
+        <header class="glass-effect fixed top-0 left-0 right-0 z-50">
+            <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <div class="text-2xl font-bold accent-text">ST</div>
+                <div class="hidden md:flex space-x-8 text-gray-700">
+                    <a href="#about" class="hover:text-accent-text transition-colors duration-300">About</a>
+                    <a href="#experience" class="hover:text-accent-text transition-colors duration-300">Experience</a>
+                    <a href="#skills" class="hover:text-accent-text transition-colors duration-300">Skills</a>
+                    <a href="#contact" class="hover:text-accent-text transition-colors duration-300">Contact</a>
+                </div>
+                <a href="mailto:shailjatiwari211@gmail.com" class="hidden md:block border border-accent-text text-accent-text px-4 py-2 rounded-md hover:bg-accent-text/10 transition-colors duration-300">Get In Touch</a>
+            </nav>
+        </header>
+
+        <main class="container mx-auto px-6 pt-24">
+
+            <!-- Hero Section -->
+            <section id="hero" class="min-h-screen flex flex-col items-center justify-center text-center">
+                <div>
+                    <h1 class="text-lg accent-text mb-4 font-medium">Hi, my name is</h1>
+                    <h2 class="text-5xl md:text-7xl font-extrabold text-gray-900">Shailja Tiwari.</h2>
+                    <h3 class="text-4xl md:text-5xl font-bold text-gray-500 mt-2">I build quality, reliable software.</h3>
+                    <p class="mt-6 max-w-2xl mx-auto text-gray-600">
+                        I'm a Lead Software Test Engineer with 4 years of experience specializing in automation and manual testing for web and mobile applications. I'm passionate about ensuring software quality and creating robust, scalable testing solutions.
+                    </p>
+                    <div class="mt-8 flex justify-center space-x-4">
+                         <a href="https://github.com/shailjatiwariii" target="_blank" class="text-gray-500 hover:text-accent-text transition-colors duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/shailja-tiwari-b261551b1" target="_blank" class="text-gray-500 hover:text-accent-text transition-colors duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="scroll-fade content-section">
+                <h2 class="section-title">About Me</h2>
+                <div class="flex flex-col md:flex-row gap-12 items-center">
+                    <div class="md:w-2/3 text-gray-700 space-y-4">
+                        <p>
+                            As a Lead Software Test Engineer with four years of dedicated experience, I've honed my skills in functional, regression, API, and automation testing across both mobile and web platforms. My expertise lies in leveraging tools like Selenium and Appium with Java to build scalable and efficient test automation frameworks from the ground up.
+                        </p>
+                        <p>
+                            I thrive in Agile environments, where I can collaborate closely with development teams to drive quality throughout the SDLC. From validating intricate UI/UX designs against Figma mockups to diving deep into developer tools to debug complex issues, my goal is always to ensure the delivery of high-impact, reliable software that meets business objectives.
+                        </p>
+                    </div>
+                    <div class="md:w-1/3 flex justify-center">
+                        <div class="w-64 h-64 rounded-full bg-gray-200 border-4 border-blue-200 overflow-hidden shadow-lg">
+                            <img src="./shailja-tiwari.jpeg" alt="Shailja Tiwari" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="scroll-fade content-section">
+                <h2 class="section-title">Where I’ve Worked</h2>
+                <div class="space-y-8">
+                    <div class="bg-white/50 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold text-gray-800">Quality Automation Engineer <span class="accent-text">@ WILYA</span></h3>
+                        <p class="text-sm text-gray-500 mb-4">January 2024 - Present</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>Built a complete iOS automation framework from scratch using Xcode and Appium, integrating it into the existing CI/CD pipeline.</li>
+                            <li>Implemented BDD scenarios using Cucumber for comprehensive testing across mobile and web platforms.</li>
+                            <li>Reduced test cycle time by 25% through strategic scripting and test optimization techniques.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white/50 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold text-gray-800">Test Engineer <span class="accent-text">@ Infosys</span></h3>
+                        <p class="text-sm text-gray-500 mb-4">September 2021 - January 2024</p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>Created and maintained robust Selenium automation scripts within the SAFT framework for a complex healthcare domain.</li>
+                            <li>Designed reusable components using the Page Object Model (POM), enhancing maintainability and efficiency.</li>
+                            <li>Reduced manual test execution efforts by 40% by automating critical regression test suites.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="scroll-fade content-section">
+                <h2 class="section-title">My Technical Skills</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                     <div class="skill-card bg-white/50 p-6 rounded-lg transition-transform duration-300">
+                        <h3 class="text-lg font-bold accent-text mb-3">Automation & Testing</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Selenium</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Appium</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Cypress</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Playwright</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Postman</span>
+                        </div>
+                    </div>
+                    <div class="skill-card bg-white/50 p-6 rounded-lg transition-transform duration-300">
+                        <h3 class="text-lg font-bold accent-text mb-3">Languages & Frameworks</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Java</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Python</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">BDD Cucumber</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">POM</span>
+                        </div>
+                    </div>
+                    <div class="skill-card bg-white/50 p-6 rounded-lg transition-transform duration-300">
+                        <h3 class="text-lg font-bold accent-text mb-3">Tools & Platforms</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">JIRA</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Git & GitHub</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Jenkins</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">GitLab CI</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Certifications & Education -->
+            <section id="certs" class="scroll-fade content-section">
+                <h2 class="section-title">Certifications & Education</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Certifications</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-600">
+                            <li>API Quality Engineer - TOPGREP Tech</li>
+                            <li>Selenium Test Expert - TOPGREP Tech</li>
+                            <li>Tricentis Automation Specialist</li>
+                            <li>Infosys Agile Developer</li>
+                        </ul>
+                    </div>
+                     <div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Education</h3>
+                        <div class="bg-white/50 p-4 rounded-lg">
+                            <p class="font-bold">Bachelor of Technology (ECE Honors)</p>
+                            <p class="text-gray-500">Government Engineering College, Rewa</p>
+                            <p class="text-sm accent-text font-medium">2017 - 2021</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="scroll-fade content-section text-center">
+                <h2 class="text-lg accent-text font-medium">What's Next?</h2>
+                <h3 class="text-4xl font-bold text-gray-900 mt-2">Get In Touch</h3>
+                <p class="max-w-xl mx-auto mt-4 text-gray-600">
+                    I'm always open to discussing new opportunities and challenges in software quality assurance. Whether you have a question or just want to connect, feel free to reach out.
+                </p>
+                <a href="mailto:shailjatiwari211@gmail.com" class="inline-block mt-8 border-2 border-accent-text text-accent-text px-8 py-3 rounded-md hover:bg-accent-text hover:text-white transition-all duration-300 text-lg font-semibold">
+                    Say Hello
+                </a>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="py-6 text-center text-gray-600 text-sm">
+            <div class="flex justify-center space-x-6 mb-4">
+                 <a href="https://github.com/shailjatiwariii" target="_blank" class="hover:text-accent-text transition-colors duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+                <a href="https://linkedin.com/in/shailja-tiwari-b261551b1" target="_blank" class="hover:text-accent-text transition-colors duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+            </div>
+            <p>Designed & Built by a helpful AI Assistant</p>
+            <p>Portfolio for Shailja Tiwari</p>
+        </footer>
+    </div>
+
+    <script>
+        // JavaScript for scroll-triggered fade-in animations
+        const scrollElements = document.querySelectorAll('.scroll-fade');
+
+        const elementInView = (el, dividend = 1) => {
+            const elementTop = el.getBoundingClientRect().top;
+            return (
+                elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+            );
+        };
+
+        const displayScrollElement = (element) => {
+            element.classList.add('visible');
+        };
+
+        const handleScrollAnimation = () => {
+            scrollElements.forEach((el) => {
+                if (elementInView(el, 1.25)) {
+                    displayScrollElement(el);
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScrollAnimation);
+        window.addEventListener('load', handleScrollAnimation);
+
+        // JavaScript for background SVG animation
+        const svg = document.getElementById('animated-lines');
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        const nodes = [];
+        const nodeCount = 30;
+
+        // Create nodes
+        for (let i = 0; i < nodeCount; i++) {
+            const node = {
+                x: Math.random() * width,
+                y: Math.random() * height,
+                vx: Math.random() * 0.5 - 0.25,
+                vy: Math.random() * 0.5 - 0.25,
+                el: document.createElementNS('http://www.w3.org/2000/svg', 'circle')
+            };
+            node.el.setAttribute('cx', node.x);
+            node.el.setAttribute('cy', node.y);
+            node.el.setAttribute('r', 2);
+            node.el.setAttribute('class', Math.random() > 0.9 ? 'bg-node-highlight' : 'bg-node');
+            nodes.push(node);
+            svg.appendChild(node.el);
+        }
+
+        // Create lines
+        const lines = [];
+        for (let i = 0; i < nodeCount; i++) {
+            for (let j = i + 1; j < nodeCount; j++) {
+                const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                line.setAttribute('class', 'bg-line');
+                lines.push({ el: line, n1: nodes[i], n2: nodes[j] });
+                svg.appendChild(line);
+            }
+        }
+
+        function animate() {
+            nodes.forEach(node => {
+                node.x += node.vx;
+                node.y += node.vy;
+
+                if (node.x > width || node.x < 0) node.vx *= -1;
+                if (node.y > height || node.y < 0) node.vy *= -1;
+
+                node.el.setAttribute('cx', node.x);
+                node.el.setAttribute('cy', node.y);
+            });
+
+            lines.forEach(line => {
+                const dx = line.n1.x - line.n2.x;
+                const dy = line.n1.y - line.n2.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+
+                if (dist < 200) {
+                    line.el.setAttribute('x1', line.n1.x);
+                    line.el.setAttribute('y1', line.n1.y);
+                    line.el.setAttribute('x2', line.n2.x);
+                    line.el.setAttribute('y2', line.n2.y);
+                    line.el.style.opacity = 1 - dist / 200;
+                } else {
+                    line.el.style.opacity = 0;
+                }
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+</body>
+</html>
